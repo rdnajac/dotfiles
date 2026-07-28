@@ -1,11 +1,12 @@
 #!/bin/sh
 set -eu
 
+BIN_DIR="${HOME}/.local/bin"
+chezmoi="${BIN_DIR}/CHEZMOI"
+
 # install chezmoi if missing
-if ! chezmoi="$(command -v chezmoi)"; then
-	bin_dir="${HOME}/.local/bin"
-	chezmoi="${bin_dir}/chezmoi"
-	echo "Installing chezmoi to '${chezmoi}'" >&2
+if [ ! -x "$CHEZMOI" ] && ! CHEZMOI="$(command -v chezmoi)"; then
+	echo "Installing chezmoi to '${BIN_DIR}/CHEZMOI'" >&2
 	if command -v curl > /dev/null; then
 		chezmoi_install_script="$(curl -fsSL https://chezmoi.io/get)"
 	elif command -v wget > /dev/null; then
@@ -14,9 +15,11 @@ if ! chezmoi="$(command -v chezmoi)"; then
 		echo "To install chezmoi, you must have curl or wget installed." >&2
 		exit 1
 	fi
-	sh -c "$chezmoi_install_script" -- -b "$bin_dir"
-	unset chezmoi_install_script bin_dir
+	sh -c "$chezmoi_install_script" -- -b "$BIN_DIR"
+	CHEZMOI="${BIN_DIR}/CHEZMOI"
+	unset chezmoi_install_script
 fi
+unset BIN_DIR
 
 # POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
 script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
@@ -25,4 +28,4 @@ set -- init --apply --debug --verbose --no-tty --source="$script_dir"
 
 echo "Running 'chezmoi $*'" >&2
 # replace current process with chezmoi
-exec "$chezmoi" "$@"
+exec "$CHEZMOI" "$@"
