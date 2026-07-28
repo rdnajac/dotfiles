@@ -2,11 +2,11 @@
 set -eu
 
 BIN_DIR="${HOME}/.local/bin"
-chezmoi="${BIN_DIR}/CHEZMOI"
+CHEZMOI="${BIN_DIR}/chezmoi"
 
 # install chezmoi if missing
 if [ ! -x "$CHEZMOI" ] && ! CHEZMOI="$(command -v chezmoi)"; then
-	echo "Installing chezmoi to '${BIN_DIR}/CHEZMOI'" >&2
+	echo "Installing chezmoi to '${BIN_DIR}/chezmoi'" >&2
 	if command -v curl > /dev/null; then
 		chezmoi_install_script="$(curl -fsSL https://chezmoi.io/get)"
 	elif command -v wget > /dev/null; then
@@ -16,7 +16,7 @@ if [ ! -x "$CHEZMOI" ] && ! CHEZMOI="$(command -v chezmoi)"; then
 		exit 1
 	fi
 	sh -c "$chezmoi_install_script" -- -b "$BIN_DIR"
-	CHEZMOI="${BIN_DIR}/CHEZMOI"
+	CHEZMOI="${BIN_DIR}/chezmoi"
 	unset chezmoi_install_script
 fi
 unset BIN_DIR

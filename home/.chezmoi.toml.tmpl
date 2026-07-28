@@ -12,7 +12,7 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
-{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "ec2user" "root" "ubuntu" "vagrant" "vscode") -}}
+{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (env "CI") (eq .chezmoi.username "ec2user" "root" "ubuntu" "vagrant" "vscode") -}}
 {{-   $ephemeral = true -}}
 {{-   $headless = true -}}
 {{- end -}}
@@ -32,6 +32,8 @@
 {{-     if stdinIsATTY -}}
 {{-       $headless = promptBoolOnce . "headless" "headless" -}}
 {{-       $ephemeral = promptBoolOnce . "ephemeral" "ephemeral" -}}
+{{-     else -}}
+{{-       $headless = true -}}
 {{-     end -}}
 {{-   end -}}
 {{- end -}}
