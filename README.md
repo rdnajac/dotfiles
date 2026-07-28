@@ -1,37 +1,21 @@
-# .files
+# dotfiles
 
 My dotfiles, managed with [chezmoi](https://chezmoi.io/).
-
-> TODO:
->
-> - CD/CI over different machines
 
 ## Install
 
 Installs chezmoi binary to `~/.local/bin`
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply https://github.com/rdnajac/.files.git
+sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply rdnajac
 ```
 
-## Terminal
-
-### [Ghostty](https://ghostty.org/)
+## [Ghostty](https://ghostty.org/)
 
 > Ghostty is a fast, feature-rich, and cross-platform terminal
 > emulator that uses platform-native UI and GPU acceleration.
 
 - Default font is JetBrains (with glyphs!)
-
-## Archive
-
-Stuff goes here
-
-## Bugs
-
-### missing or unsuitable terminal: xterm-ghostty
-
-<https://ghostty.org/docs/help/terminfo#ssh>
 
 ## Resources
 
