@@ -16,6 +16,14 @@ fi
 
 brewfile="{{ .chezmoi.sourceDir }}/dot_config/brewfile/Brewfile"
 
+# CI: brew bundle can't order the custom npm/cargo/uv types after `node`,
+# so strip them and install only native entries
+if [ -n "${CI:-}" ]; then
+	filtered="$(mktemp)"
+	grep -E '^(brew|cask|tap|mas) ' "$brewfile" > "$filtered"
+	brewfile="$filtered"
+fi
+
 # first install: trust every declared tap so bundle can load non-official formulae
 sed -n 's/^tap "\([^"]*\)".*/\1/p' "$brewfile" | while IFS= read -r tap; do
 	brew trust --tap "$tap" || true

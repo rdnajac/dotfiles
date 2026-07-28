@@ -23,6 +23,10 @@ sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply https://github.com/rdnaj
 
 - Default font is JetBrains (with glyphs!)
 
+## Archive
+
+Stuff goes here
+
 ## Bugs
 
 ### missing or unsuitable terminal: xterm-ghostty

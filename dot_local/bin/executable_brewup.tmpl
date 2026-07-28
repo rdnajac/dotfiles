@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+
+export HOMEBREW_NO_ENV_HINTS=1
+brew update && brew upgrade && brew cleanup -s
+
+brewfile="{{ .chezmoi.sourceDir }}/dot_config/brewfile/Brewfile"
+brew bundle dump --force --describe --file=- \
+	| awk '/^#/{comment=$0; next} {print $0 "\t" comment; comment=""}' \
+	| sort > "$brewfile"

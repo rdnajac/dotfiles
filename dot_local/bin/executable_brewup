@@ -1,3 +1,0 @@
-#!/bin/sh
-
-HOMEBREW_NO_ENV_HINTS=1 brew update && brew upgrade && brew cleanup -s

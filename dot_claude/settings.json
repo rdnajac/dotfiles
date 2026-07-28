@@ -4,53 +4,59 @@
       "Read(/Users/rdn/GitHub/**)",
       "Glob(/Users/rdn/GitHub/**)",
       "Grep(/Users/rdn/GitHub/**)",
+      "Read(/Users/rdn/.claude/CLAUDE.md)",
+      "Bash(echo:*)",
+      "Bash(command:*)",
+      "Bash(which:*)",
       "Bash(semble:*)"
     ],
     "deny": [
-      "Bash(brew *)"
+      "Bash(brew:*)"
     ],
     "defaultMode": "default",
     "additionalDirectories": [
       "/Users/rdn/GitHub"
     ]
   },
+  "hooks": {
+    "Notification": [
+      {
+	"matcher": "",
+	"hooks": [
+	  {
+	    "type": "command",
+	    "command": "osascript -e 'display notification \"Hey look!\" with title \"Claude Code\"'"
+	  }
+	]
+      }
+    ]
+  },
   "enabledPlugins": {
     "andrej-karpathy-skills@karpathy-skills": true,
     "understand-anything@understand-anything": true,
-    "caveman@caveman": true
+    "caveman@caveman": true,
+    "lua-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "karpathy-skills": {
       "source": {
-        "source": "github",
-        "repo": "forrestchang/andrej-karpathy-skills"
+	"source": "github",
+	"repo": "forrestchang/andrej-karpathy-skills"
       }
     },
     "understand-anything": {
       "source": {
-        "source": "github",
-        "repo": "Egonex-AI/Understand-Anything"
+	"source": "github",
+	"repo": "Egonex-AI/Understand-Anything"
       }
     },
     "caveman": {
       "source": {
-        "source": "github",
-        "repo": "JuliusBrussee/caveman"
+	"source": "github",
+	"repo": "JuliusBrussee/caveman"
       }
     }
   },
-  "theme": "dark-ansi",
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"Hey look!\" with title \"Claude Code\"'"
-          }
-        ]
-      }
-    ]
-  }
+  "theme": "dark-ansi"
 }
