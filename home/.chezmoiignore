@@ -1,10 +1,4 @@
 # `https://www.chezmoi.io/reference/special-files/chezmoiignore/`
-.nvimrc
-Justfile
-README.md
-install.sh
-vim-chezmoi
-
 # patterns relative to dest
 .config/fish/functions/_*
 fisher.fish

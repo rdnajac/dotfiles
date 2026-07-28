@@ -23,8 +23,8 @@
 {{- end -}}
 
 {{- if not $ephemeral -}}
-{{-   if eq $host "Ryans-MacBook-Air" -}}
-{{-     $personal = true -}}
+{{-   $personal = promptBoolOnce . "personal" "personal" false -}}
+{{-   if $personal -}}
 {{-     $email = "ryan.najac@columbia.edu" -}}
 {{-   else -}}
 {{-     $work = true -}}

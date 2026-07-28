@@ -8,7 +8,8 @@
       "Bash(echo:*)",
       "Bash(command:*)",
       "Bash(which:*)",
-      "Bash(semble:*)"
+      "Bash(semble:*)",
+      "Bash(gh api:*)"
     ],
     "deny": [
       "Bash(brew:*)"
