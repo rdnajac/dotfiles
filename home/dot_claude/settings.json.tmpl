@@ -1,0 +1,80 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/Users/rdn/GitHub/**)",
+      "Bash(command -v:*)",
+      "Bash(echo:*)",
+      "Bash(which:*)",
+      "Bash(gh api:*)",
+      "Bash(semble:*)"
+    ],
+    "deny": [
+      "Bash(brew:*)"
+    ],
+    "defaultMode": "auto",
+    "additionalDirectories": [
+      "/Users/rdn/GitHub"
+    ]
+  },
+  "model": "sonnet",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // empty' | grep -qxF \"$HOME/.claude/settings.json\" && chezmoi add \"$HOME/.claude/settings.json\" >/dev/null 2>&1 || true",
+            "statusMessage": "chezmoi add settings.json"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=$$; while [ $p -gt 1 ]; do t=$(ps -o tty= -p $p | tr -d ' '); case $t in ttys*) printf '\\033]777;notify;Claude Code;Hey look!\\033\\\\' > /dev/$t; break;; esac; p=$(ps -o ppid= -p $p | tr -d ' '); [ -z \"$p\" ] && break; done"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "lua-lsp@claude-plugins-official": false,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "andrej-karpathy-skills@karpathy-skills": true,
+    "caveman@caveman": true,
+    "simple-english@simple-english": true,
+    "nvim-lua-lsp@nvim-lsp-mp": true
+  },
+  "extraKnownMarketplaces": {
+    "karpathy-skills": {
+      "source": {
+        "source": "github",
+        "repo": "forrestchang/andrej-karpathy-skills"
+      }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    },
+    "simple-english": {
+      "source": {
+        "source": "github",
+        "repo": "AminBlg/SimpleEnglish"
+      }
+    }
+  },
+  "outputStyle": "simple-english",
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": {{ .spinnerVerbs | toJson }}
+  },
+  "effortLevel": "medium",
+  "theme": "dark-ansi"
+}
