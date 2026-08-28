@@ -1,5 +1,4 @@
-# Base list = packages with the same name on apt, pacman, and dnf.
-# Per-distro lists extend it with build deps whose package names differ.
+# Per-distro lists extend base with build deps whose package names differ.
 # The install script concatenates base + the matching distro list.
 packages:
   base:

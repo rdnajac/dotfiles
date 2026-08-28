@@ -6,7 +6,7 @@
   stripComponents: 1
   url: {{ printf "https://github.com/neovim/neovim/releases/download/nightly/nvim-%s-%s.tar.gz" $platform $arch | quote }}
   executable: false
-  refreshPeriod: 24h
+  refreshPeriod: 12h
 
 {{- if .work }}
 .vim:
@@ -15,3 +15,13 @@
   refreshPeriod: 0s
 {{- end }}
 
+{{- /*
+{{- $vimdir := ".local/share/vimfect" }}
+{{ range .start -}}
+  {{- template "plug" (dict "repo" . "vimdir" $vimdir) -}}
+{{ end }}
+
+{{ range .opt -}}
+  {{- template "opt" (dict "repo" . "vimdir" $vimdir) -}}
+{{ end }}
+*/ -}}

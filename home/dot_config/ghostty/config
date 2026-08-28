@@ -17,15 +17,23 @@ selection-word-chars = " \t│,`"
 # `true` only copies to the selection pasteboard on macOS;
 # `clipboard` also copies to the system clipboard so cmd+v works
 copy-on-select = clipboard
+# cursor-click-to-move = true   # click moves shell cursor
+# focus-follows-mouse = true    # hover focuses split
+# mouse-shift-capture = never   # shift+click always extends selection
 
 # hacky way to override settings; only works on an empty prompt
 keybind = super+,=text:chezmoi edit --watch ~/.config/ghostty/config\n
 # keybind = chain=reload_config
 
 keybind = super+b=toggle_background_opacity
-keybind = global:cmd+backquote=toggle_quick_terminal
+# keybind = global:cmd+backquote=toggle_quick_terminal
+
+
+# https://ghostty.org/docs/config/reference#custom-shader
+# https://catskull.net/fun-with-ghostty-shaders.html>
+cursor-style = block
+custom-shader = ~/.config/ghostty/shaders/cursor_blaze_tapered.glsl
+# custom-shader-animation = always
 
 config-file = font
-config-file = shader
 config-file = ?macos
-config-file = ?keybinds

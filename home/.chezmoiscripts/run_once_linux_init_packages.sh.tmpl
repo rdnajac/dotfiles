@@ -1,4 +1,4 @@
-{{- if and (eq .chezmoi.os "linux") (hasKey . "packages") -}}
+{{- if eq .chezmoi.os "linux" -}}
 #!/bin/sh
 {{- $base := .packages.base | default (list) }}
 {{- $id := "" }}

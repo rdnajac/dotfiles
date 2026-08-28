@@ -11,7 +11,7 @@ act *ARGS:
 test-act:
     act push --matrix os:ubuntu-latest -j install
 
-test-ci image=image:
+test-install image=image:
     set -euo pipefail
     set -x
     {{runner}} run --rm -v "{{root}}:/workspace" -w /workspace "{{image}}" \

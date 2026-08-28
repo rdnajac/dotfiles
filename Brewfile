@@ -1,6 +1,7 @@
 brew "aom"	# Codec library for encoding and decoding AV1 video streams
 brew "apfel"	# Apple Intelligence from the command-line, with OpenAi-compatible API server
 brew "automake"	# Tool for generating GNU Standards-compliant Makefiles
+brew "aws-cdk"	# AWS Cloud Development Kit - framework for defining AWS infra as code
 brew "awscli"	# Official Amazon AWS command-line interface
 brew "bash-language-server"	# Language Server for Bash
 brew "bat"	# Clone of cat(1) with syntax highlighting and Git integration
@@ -25,8 +26,11 @@ brew "ddgr"	# DuckDuckGo from the terminal
 brew "docker"	# Pack, ship and run any application as a lightweight container
 brew "doxygen"	# Generate documentation for several programming languages
 brew "duckdb"	# Embeddable SQL OLAP Database Management System
+brew "dust"	# More intuitive version of du in rust
+brew "ewhauser/tap/shuck-cli", trusted: true	# A fast shell script linter
 brew "eza"	# Modern, maintained replacement for ls
 brew "fd"	# Simple, fast and user-friendly alternative to find
+brew "ffmpeg"	# Play, record, convert, and stream select audio and video codecs
 brew "figlet"	# Banner-like program prints strings as ASCII art
 brew "fish-lsp"	# LSP implementation for the fish shell language
 brew "fish"	# User-friendly command-line shell for UNIX-like operating systems
@@ -61,6 +65,7 @@ brew "libxlsxwriter"	# C library for creating Excel XLSX files
 brew "libyaml"	# YAML Parser
 brew "lolcat"	# Rainbows and unicorns in your console!
 brew "lua-language-server"	# Language Server for the Lua language
+brew "mermaid-cli"	# CLI for Mermaid library
 brew "mole"	# Deep clean and optimize your Mac
 brew "mysql"	# Open source relational database management system
 brew "ninja"	# Small build system for use with gyp or CMake
@@ -81,6 +86,7 @@ brew "readline"	# Library for command-line editing
 brew "ripgrep"	# Search tool like grep and The Silver Searcher
 brew "ruby-install"	# Install Ruby, JRuby, Rubinius, TruffleRuby, or mruby
 brew "ruff"	# Extremely fast Python linter, written in Rust
+brew "rumdl"	# Markdown Linter and Formatter written in Rust
 brew "sdl2-compat"	# SDL2 compatibility layer that uses SDL3 behind the scenes
 brew "shellharden"	# Bash syntax highlighter that encourages/fixes variables quoting
 brew "shfmt"	# Autoformat shell script source code
@@ -97,7 +103,6 @@ brew "tree-sitter-cli"	# Parser generator tool
 brew "tree-sitter"	# Incremental parsing library
 brew "tree"	# Display directories as trees (with optional color/HTML output)
 brew "ts_query_ls"	# LSP implementation for Tree-sitter's query files
-brew "uv"	# Extremely fast Python package installer and resolver, written in Rust
 brew "wget"	# Internet file retriever
 brew "wireshark"	# Network analyzer and capture tool - without graphical user interface
 brew "xz"	# General-purpose data compression with high compression ratio
@@ -110,9 +115,9 @@ brew "zoxide"	# Shell extension to navigate your filesystem faster
 brew "zsh-completions"	# Additional completion definitions for zsh
 brew "zstd"	# Zstandard is a real-time compression algorithm
 cargo "cargo-generate"	
+cask "balenaetcher"	# Tool to flash OS images to SD cards & USB drives
 cask "claude-code"	# Terminal-based AI coding assistant
 cask "claude"	# Anthropic's official Claude AI desktop app
-cask "copilot-cli"	# Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-language-server"	# Language Server Protocol server for GitHub Copilot
 cask "db-browser-for-sqlite"	# Browser for SQLite databases
 cask "firefox"	# Web browser
@@ -124,11 +129,12 @@ cask "notunes"	# Simple application that will prevent iTunes or Apple Music from
 cask "openrefine"	# Tool for working with messy data (previously Google Refine)
 cask "quarto"	# Scientific and technical publishing system built on Pandoc
 cask "scroll-reverser"	# Tool to reverse the direction of scrolling
+cask "session-manager-plugin"	# Plugin for AWS CLI to start and end sessions that connect to managed instances
 cask "skim"	# PDF reader and note-taking application
 cask "sshfs-mac"	# Network filesystem client to connect to SSH servers
 cask "temurin"	# JDK from the Eclipse Foundation (Adoptium)
 npm "pnpm"	
-tap "aws/tap", trusted: true
+npm "vscode-langservers-extracted"	
+tap "aws/tap", trusted: true	
 tap "ewhauser/tap", trusted: true	
 tap "gromgit/fuse", trusted: true	
-uv "semble"	

@@ -1,4 +1,4 @@
-# `https://www.chezmoi.io/reference/special-files/chezmoiignore/`
-# patterns relative to dest
+# `chezmoi.io/reference/special-files/chezmoiignore/`
+**/README*
 .config/fish/functions/_*
 fisher.fish

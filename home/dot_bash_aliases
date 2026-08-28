@@ -1,61 +1,52 @@
-# ~/.bash_aliases
-# default .bashrc will automatically source this file
-# check out `/usr/share/doc/bash` for more resources
-alias ll='ls -hoAFG'
-
+## ~/.bash_aliases
+## default .bashrc automatically sources this file
+## also see `/usr/share/doc/bash`
+export EDITOR=vim
+export VISUAL=nvim
+export MANPAGER='nvim +Man!'
+# alias ll='ls -hoAFG'
+alias ll='gls -hoAFG --group-directories-first --color=auto'
 alias bd='cd -'
 alias ..='cd ..'
 alias ...='cd ../..'
-
-# be `--verbose` by default
 alias mkdir='mkdir -v'
 alias rmdir='rmdir -v'
-
-# prompt before destructive actions
 alias cp='cp -vi'
 alias ln='ln -vi'
 alias mv='mv -vi'
 alias rm='rm -vi'
-
-# file permissions
-alias  chmod='chmod -vv' # print old and new modes
-alias    chx='chmod u+x' # make file executable
-alias   lock='chmod -w'  # make file read-only
-alias unlock='chmod +w'  # make file writable
-
-# color
+alias chmod='chmod -vv' # print old and new modes
+alias chx='chmod u+x' # make file executable
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
-
 alias histgrep='history | grep'
 alias symlink='ln -sfhwF'
 # alias open='xdg-open > /dev/null 2>&1 &'
 # alias sync='rsync -avz --progress --exclude=".*"'
-
-# NOTE: simple aliases should support tab-completion by default
-alias g=git
-alias mm=micromamba
-alias rscript=Rscript
-alias ba='chezmoi edit --apply ~/.bash_aliases'
-alias cz='chezmoi'
+alias cz=chezmoi
 alias cze='cz edit --apply'
+alias e='cz edit --apply'
+alias ba='cze ~/.bash_aliases'
+alias fa='cze ~/.config/fish/config.fish'
 alias czm='cz managed'
 alias czu='cz unmanaged'
 alias czx='cz execute-template --file'
-
+alias g=git
+alias j=just
+alias m=mo
+alias ma='mo analyze'
+alias mm=micromamba
+alias rscript=Rscript
 # alias nv=nvim
 # alias nvr='nvim --headless --noplugin --server "$NVIM" --remote-expr'
 alias pbedit='nvim +Clipboard' # edit the system clipboard with nvim
 alias qp='quarto preview'
 alias qr='quarto render'
+alias python=python3
+alias p3=python3
+alias px=pipx
 alias ssx='$VISUAL $HOME/.ssh/config'
 alias tmx='$VISUAL $HOME/.config/tmux/tmux.conf'
-alias zx='zoxide remove "$PWD" && echo "Removed $PWD from zoxide database."'
 alias zz=fg
-alias zv='z rdnajac_vim'
-alias zf='z rdnajac_files'
-
-export EDITOR=vim
-export VISUAL=nvim
-export MANPAGER='nvim +Man!'
+alias zx='zoxide remove "$PWD" && printf "\033[31mRemoved %s from zoxide database.\033[0m\n" "$PWD"'
 alias ree='clear -x && echo "(╯°□°)╯︵ ┻━┻" && exec "$SHELL"'

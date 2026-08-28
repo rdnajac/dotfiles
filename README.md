@@ -2,16 +2,22 @@
 
 My dotfiles, managed with [chezmoi](https://chezmoi.io/).
 
-> TODO:
->
-> - CD/CI over different machines
-
-## Install
-
-Installs chezmoi binary to `~/.local/bin`
+Install `chezmoi` to `~/.local/bin` and initialize dotfiles:
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply https://github.com/rdnajac/.files.git
+sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply rdnajac
+```
+
+## Other `curl`-to-`sh` installations
+
+```sh
+# `brew`
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | sh
+```
+
+```sh
+# `rust`
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ```
 
 ## Terminal
@@ -40,3 +46,4 @@ Stuff goes here
 ## License
 
 ???
+

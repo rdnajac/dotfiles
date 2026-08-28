@@ -1,5 +1,4 @@
 {{- if eq .chezmoi.os "darwin" -}}
-# vim: set filetype=ghostty
 command = {{ lookPath "fish" }}
 macos-icon = custom-style
 macos-icon-frame = plastic
@@ -14,4 +13,6 @@ macos-icon-screen-color = #16161d
 
 # hide the titlebar without removing the native window borders or rounded corners
 # macos-titlebar-style = hidden
+
+# vim: set filetype=ghostty
 {{- end }}

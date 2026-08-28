@@ -1,3 +1,11 @@
+# ghostty config
+
+## keybind chaining
+
+forgot what this does
+
+```
+```ghostty
 keybind = super+i=new_split:left
 keybind = chain=text:nvim .\n
 keybind = chain=resize_split:left,400
@@ -13,5 +21,4 @@ keybind = chain=resize_split:left,400
 keybind = chain=new_split:down
 keybind = chain=resize_split:down,400
 keybind = chain=goto_split:left
-
-# vim: set filetype=ghostty
+```

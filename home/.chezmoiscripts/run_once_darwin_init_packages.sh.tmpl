@@ -3,23 +3,17 @@
 set -eu
 
 export NONINTERACTIVE=1 HOMEBREW_NO_ENV_HINTS=1
+BREWFILE="{{ .chezmoi.sourceDir }}/../Brewfile"
 
 if ! command -v brew >/dev/null 2>&1; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-if [ -x /opt/homebrew/bin/brew ]; then
-	eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-	eval "$(/usr/local/bin/brew shellenv)"
-fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brewfile="{{ .chezmoi.sourceDir }}/dot_config/brewfile/Brewfile"
-
-# first install: trust every declared tap so bundle can load non-official formulae
-sed -n 's/^tap "\([^"]*\)".*/\1/p' "$brewfile" | while IFS= read -r tap; do
+sed -n 's/^tap "\([^"]*\)".*/\1/p' "$BREWFILE" | while IFS= read -r tap; do
 	brew trust --tap "$tap" || true
 done
 
-brew bundle install --file="$brewfile"
+brew bundle install --file="$BREWFILE"
 {{- end -}}
