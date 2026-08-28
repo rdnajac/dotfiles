@@ -1,10 +1,13 @@
 /opt/homebrew/bin/brew shellenv | source
 
 if status is-interactive # commands to run in interactive sessions go here
+  fish_config theme choose tokyonight
+
   chezmoi completion fish | source
+  fzf --fish              | source
+  starship init fish      | source
   thefuck --alias         | source
   zoxide init fish        | source
-  starship init fish      | source
 
   if test -f ~/.bash_aliases
     source ~/.bash_aliases # fish handles `alias` and `export` natively
