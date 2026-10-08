@@ -1,5 +1,5 @@
 {{- if stdinIsATTY -}}
 #!/bin/sh
 set -eu
-"$HOME/.local/atuin/atuin" login </dev/tty
+"$HOME/.atuin/bin/atuin" login </dev/tty
 {{- end -}}

@@ -2,7 +2,7 @@
 {{- if eq .tag "latest" }}
   {{- $url = printf "https://github.com/%s/releases/latest/download/%s" .repo .asset -}}
 {{- end }}
-.local/{{ .name }}:
+{{ .path }}:
   type: archive
   exact: true
   stripComponents: 1
