@@ -1,12 +1,9 @@
 {{ $platform := ternary "macos" "linux" (eq .chezmoi.os "darwin") -}}
 {{- $arch := ternary "arm64" "x86_64" (eq .chezmoi.arch "arm64") -}}
-.local/neovim:
-  type: archive
-  exact: true
-  stripComponents: 1
-  url: {{ printf "https://github.com/neovim/neovim/releases/download/nightly/nvim-%s-%s.tar.gz" $platform $arch | quote }}
-  executable: false
-  refreshPeriod: 12h
+{{ template "release" (dict "name" "neovim" "repo" "neovim/neovim" "tag" "nightly" "asset" (printf "nvim-%s-%s.tar.gz" $platform $arch) "refreshPeriod" "12h") }}
+
+{{- $atuinTarget := printf "%s-%s" (ternary "aarch64" "x86_64" (eq .chezmoi.arch "arm64")) (ternary "apple-darwin" "unknown-linux-musl" (eq .chezmoi.os "darwin")) }}
+{{ template "release" (dict "name" "atuin" "repo" "atuinsh/atuin" "tag" "latest" "asset" (printf "atuin-%s.tar.gz" $atuinTarget) "refreshPeriod" "168h") }}
 
 {{- $mambaArch := "" -}}
 {{- if eq .chezmoi.os "darwin" -}}
