@@ -1,0 +1,11 @@
+{{- if stdinIsATTY -}}
+#!/bin/sh
+set -eu
+
+printf 'Set up atuin? [y/N] '
+read -r answer </dev/tty || answer=n
+
+case "$answer" in
+	[yY]*) curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh ;;
+esac
+{{- end -}}

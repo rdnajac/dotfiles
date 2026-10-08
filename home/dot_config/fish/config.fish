@@ -3,6 +3,7 @@
 if status is-interactive # commands to run in interactive sessions go here
   fish_config theme choose tokyonight
 
+  atuin init fish         | source
   chezmoi completion fish | source
   fzf --fish              | source
   starship init fish      | source

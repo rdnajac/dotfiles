@@ -25,6 +25,12 @@ curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ```
 
+### `atuin`
+
+```sh
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+```
+
 ## [Ghostty](https://ghostty.org/)
 
 > Ghostty is a fast, feature-rich, and cross-platform terminal
