@@ -8,6 +8,20 @@
   executable: false
   refreshPeriod: 12h
 
+{{- $mambaArch := "" -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $mambaArch = (eq .chezmoi.arch "arm64") | ternary "osx-arm64" "osx-64" -}}
+{{- else -}}
+{{-   $mambaArch = (eq .chezmoi.arch "arm64") | ternary "linux-aarch64" "linux-64" -}}
+{{- end }}
+.local/bin/micromamba:
+  type: archive-file
+  url: "https://micro.mamba.pm/api/micromamba/{{ $mambaArch }}/latest"
+  format: tar.bz2
+  path: bin/micromamba
+  executable: true
+  refreshPeriod: 720h
+
 {{- if .work }}
 .vim:
   type: git-repo
