@@ -3,3 +3,7 @@
 .config/fish/functions/_*
 fisher.fish
 .claude/settings.json
+{{- if ne .chezmoi.os "darwin" }}
+.zshenv
+.config/zsh
+{{- end }}
