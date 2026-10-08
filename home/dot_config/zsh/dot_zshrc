@@ -28,9 +28,17 @@ zstyle ':completion:*:rsync:*' tag-order hosts remote-directories files
 # alias awk="${HOMEBREW_PREFIX}/bin/gawk"
 # alias ctags="${HOMEBREW_PREFIX}/bin/ctags"
 
-eval "$(chezmoi completion zsh)"
-eval "$(thefuck --alias)"
-eval "$(zoxide init zsh)"
+# only run the shell init scripts if the commands are available
+__eval_if_command() {
+	command -v "$1" >/dev/null 2>&1 && eval "$("$@")"
+}
+
+__eval_if_command chezmoi completion zsh
+__eval_if_command thefuck --alias
+__eval_if_command zoxide init zsh
+__eval_if_command atuin init zsh
+
+unset -f __eval_if_command
 
 CONFDIR=${ZDOTDIR:-$HOME/.config/zsh}
 # Load additional zsh configs
