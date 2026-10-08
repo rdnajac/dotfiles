@@ -2,3 +2,4 @@
 **/README*
 .config/fish/functions/_*
 fisher.fish
+.claude/settings.json

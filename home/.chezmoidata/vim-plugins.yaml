@@ -2,22 +2,9 @@ start:
 - alker0/chezmoi.vim
 - dstein64/vim-startuptime
 - github/copilot.vim
-- tpope/vim-abolish
-- tpope/vim-capslock
-- tpope/vim-characterize
-- tpope/vim-dadbod
 - tpope/vim-dispatch
-- tpope/vim-endwise
-- tpope/vim-eunuch
-- tpope/vim-fugitive
-- tpope/vim-repeat
-- tpope/vim-rhubarb
-- tpope/vim-rsi
 - tpope/vim-scriptease
-- tpope/vim-speeddating
-- tpope/vim-surround
 - tpope/vim-tbone
-- tpope/vim-unimpaired
 - tpope/vim-vinegar
 
 opt:
@@ -33,3 +20,4 @@ opt:
 - vuciv/golf
 - tpope/vim-sensible
 - tpope/vim-jdaddy
+

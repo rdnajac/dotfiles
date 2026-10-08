@@ -15,6 +15,13 @@
   refreshPeriod: 0s
 {{- end }}
 
+{{- range .tpope }}
+.local/share/nvim/site/pack/tpope/start/{{ base . }}:
+  type: git-repo
+  url: {{ printf "https://github.com/%s.git" . | quote }}
+  refreshPeriod: 168h
+{{- end }}
+
 {{- /*
 {{- $vimdir := ".local/share/vimfect" }}
 {{ range .start -}}

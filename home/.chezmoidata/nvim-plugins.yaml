@@ -1,0 +1,14 @@
+tpope:
+- tpope/vim-abolish
+- tpope/vim-capslock
+- tpope/vim-characterize
+- tpope/vim-dadbod
+- tpope/vim-endwise
+- tpope/vim-eunuch
+- tpope/vim-fugitive
+- tpope/vim-repeat
+- tpope/vim-rhubarb
+- tpope/vim-rsi
+- tpope/vim-speeddating
+- tpope/vim-surround
+- tpope/vim-unimpaired

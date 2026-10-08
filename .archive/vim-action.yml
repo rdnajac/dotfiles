@@ -1,0 +1,41 @@
+name: action
+run-name: ${{ github.actor }} action
+on: [push]
+jobs:
+  # install-vim:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Check out repository code
+  #       uses: actions/checkout@v5
+  #     - run: echo "💡 ${{ github.repository }} has been cloned to the runner on a ${{ runner.os }} server ."
+  #     - name: rtp
+  #       env:
+  #         HOME: ${{ github.workspace }}
+  #       run: |
+  #         sudo apt-get update -y
+  #         sudo apt-get install -y vim
+  #         echo 'starting vim...'
+  #         vim -es --not-a-term -u NONE -i NONE -c 'redir => g:out | echo &rtp | redir END | call writefile(split(g:out, "\n"), "/dev/stdout") | qall!'
+  #     - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  # install-neovim:
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: mcr.microsoft.com/vscode/devcontainers/base:ubuntu
+  #   steps:
+  #     - uses: actions/checkout@v5
+  #     - run: ./bin/scripts/install-neovim.sh
+  #     # open and close neovim headless
+  #     - run: ~/.local/bin/nvim --headless -c 'lua io.stdout:write("hi from nvim!\n")' -c 'q'
+
+  test-vim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: which vim
+      # - run: ./bin/scripts/install-neovim.sh
+      # open and close neovim headless
+      # - run: ~/.local/bin/nvim --headless -c 'lua io.stdout:write("hi from nvim!\n")' -c 'q'
+      # - run: vim -es --not-a-term -u NONE -i NONE -c 'redir => g:out | echo &rtp | redir END | call writefile(split(g:out, "\n"), "/dev/stdout") | qall!'
+      # - run: echo "🍏 This job's status is ${{ job.status }}."
+
