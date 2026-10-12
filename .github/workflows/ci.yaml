@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   install:
     strategy:
@@ -37,7 +40,9 @@ jobs:
         with:
           path: ~/.local/bin/chezmoi
           key: chezmoi-${{ matrix.container || runner.os }}-${{ runner.arch }}
+      - name: Add local bin to PATH
+        run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - name: Run install script
         run: ./install.sh
       - name: chezmoi data
-        run: '"$HOME/.local/bin/chezmoi" data'
+        run: chezmoi data
