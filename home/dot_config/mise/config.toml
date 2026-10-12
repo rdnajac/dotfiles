@@ -1,0 +1,8 @@
+[tools]
+atuin = "latest"
+fd = "latest"
+just = "latest"
+micromamba = "latest"
+neovim = "nightly"
+ripgrep = "latest"
+zoxide = "latest"

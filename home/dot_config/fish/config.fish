@@ -8,6 +8,7 @@ __source_if_command /opt/homebrew/bin/brew shellenv
 
 # commands to run in interactive sessions go here
 if status is-interactive
+  __source_if_command mise activate fish
   __source_if_command atuin init fish
   __source_if_command chezmoi completion fish
   __source_if_command fzf --fish
@@ -35,7 +36,9 @@ functions -e __source_if_command
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'micromamba shell init' !!
-set -gx MAMBA_EXE "/Users/rdn/.local/bin/micromamba"
-set -gx MAMBA_ROOT_PREFIX "/Users/rdn/.cache/micromamba"
-$MAMBA_EXE shell hook --shell fish --root-prefix $MAMBA_ROOT_PREFIX | source
+if command -q micromamba
+  set -gx MAMBA_EXE (command -v micromamba)
+  set -gx MAMBA_ROOT_PREFIX "$HOME/.cache/micromamba"
+  $MAMBA_EXE shell hook --shell fish --root-prefix $MAMBA_ROOT_PREFIX | source
+end
 # <<< mamba initialize <<<

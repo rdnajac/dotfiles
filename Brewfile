@@ -29,7 +29,6 @@ brew "duckdb"	# Embeddable SQL OLAP Database Management System
 brew "dust"	# More intuitive version of du in rust
 brew "ewhauser/tap/shuck-cli", trusted: true	# A fast shell script linter
 brew "eza"	# Modern, maintained replacement for ls
-brew "fd"	# Simple, fast and user-friendly alternative to find
 brew "ffmpeg"	# Play, record, convert, and stream select audio and video codecs
 brew "figlet"	# Banner-like program prints strings as ASCII art
 brew "fish-lsp"	# LSP implementation for the fish shell language
@@ -54,7 +53,6 @@ brew "htslib"	# C library for high-throughput sequencing data formats
 brew "hugo"	# Configurable static site generator
 brew "imagemagick"	# Tools and libraries to manipulate images in select formats
 brew "jpeg-xl"	# New file format for still image compression
-brew "just"	# Handy way to save and run project-specific commands
 brew "lazydocker"	# Lazier way to manage everything docker
 brew "lazygit"	# Simple terminal UI for git commands
 brew "lftp"	# Sophisticated file transfer program
@@ -83,7 +81,6 @@ brew "qt"	# Cross-platform application and UI framework
 brew "r"	# Software environment for statistical computing
 brew "rclone"	# Rsync for cloud storage
 brew "readline"	# Library for command-line editing
-brew "ripgrep"	# Search tool like grep and The Silver Searcher
 brew "ruby-install"	# Install Ruby, JRuby, Rubinius, TruffleRuby, or mruby
 brew "ruff"	# Extremely fast Python linter, written in Rust
 brew "rumdl"	# Markdown Linter and Formatter written in Rust
@@ -111,7 +108,6 @@ brew "yaml-language-server"	# Language Server for Yaml Files
 brew "yarn"	# JavaScript package manager
 brew "zig"	# Programming language designed for robustness, optimality, and clarity
 brew "zlib"	# General-purpose lossless data-compression library
-brew "zoxide"	# Shell extension to navigate your filesystem faster
 brew "zsh-completions"	# Additional completion definitions for zsh
 brew "zstd"	# Zstandard is a real-time compression algorithm
 cargo "cargo-generate"	

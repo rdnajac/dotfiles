@@ -2,13 +2,8 @@
 
 My dotfiles, managed with [chezmoi](https://chezmoi.io/).
 
-## Install
-
-> chezmoi helps you manage your dotfiles across multiple machines.
-
-Install `chezmoi` to `~/.local/bin` and initialize dotfiles:
-
 ```sh
+# Install `chezmoi` to `~/.local/bin` and initialize dotfiles:
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply rdnajac
 ```
 note: curl is required even by the install script. on ubuntu/debian run:
@@ -34,15 +29,6 @@ curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | 
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-```
-
-### `atuin`
-
-> Atuin replaces your existing shell history with a SQLite
-> database, and records additional context for your commands.
-
-```sh
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 ```
 
 ## [Ghostty](https://ghostty.org/)

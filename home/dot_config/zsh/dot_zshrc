@@ -33,6 +33,7 @@ __eval_if_command() {
 	command -v "$1" >/dev/null 2>&1 && eval "$("$@")"
 }
 
+__eval_if_command mise activate zsh
 __eval_if_command chezmoi completion zsh
 __eval_if_command thefuck --alias
 __eval_if_command zoxide init zsh

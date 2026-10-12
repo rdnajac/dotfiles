@@ -27,6 +27,9 @@ jobs:
             deps: dnf install -y nodejs git curl sudo
     runs-on: ${{ matrix.os }}
     container: ${{ matrix.container }}
+    env:
+      # mise uses the GitHub API to resolve versions; unauthenticated calls hit rate limits
+      GITHUB_TOKEN: ${{ github.token }}
     defaults:
       run:
         shell: bash
