@@ -1,0 +1,17 @@
+{{- if .work }}
+.vim:
+  type: git-repo
+  url: {{ "https://github.com/rdnajac/.vim.git" | quote }}
+  refreshPeriod: 0s
+{{- end }}
+
+{{- /*
+{{- $vimdir := ".local/share/vimfect" }}
+{{ range .start -}}
+  {{- template "plug" (dict "repo" . "vimdir" $vimdir) -}}
+{{ end }}
+
+{{ range .opt -}}
+  {{- template "opt" (dict "repo" . "vimdir" $vimdir) -}}
+{{ end }}
+*/ -}}
