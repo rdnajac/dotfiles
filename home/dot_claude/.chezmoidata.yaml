@@ -6,7 +6,6 @@ spinnerVerbs:
   - centrifuging
   - pipetting
   - culturing
-  - sterilizing
   - staining
   - plating
   - vortexing
@@ -66,7 +65,6 @@ spinnerVerbs:
   - ph-adjusting
   - conjugating
   - transducing
-  - flame-sterilizing
   - uv-sterilizing
   - disinfecting
   - decontaminating
